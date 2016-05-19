@@ -1,5 +1,3 @@
-# require_relative '../../lib/tunes_takeout_wrapper.rb'
-
 class User < ActiveRecord::Base
   validates :display_name, :uid, :provider, presence: true
 
@@ -12,6 +10,7 @@ class User < ActiveRecord::Base
     else
     # create a user 
      user               = User.new 
+     user.photo_url     = auth_hash["info"]['images'][0]['url']
      user.uid           = auth_hash["info"]["id"]
      user.display_name  = auth_hash["info"]["display_name"]
      user.email         = auth_hash["info"]["email"]

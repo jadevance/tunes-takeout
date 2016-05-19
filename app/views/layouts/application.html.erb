@@ -11,8 +11,15 @@
 
 <main class="container">
   <%= "Hi #{ current_user.display_name }!" if current_user %>
+  <%= image_tag current_user.photo_url if current_user %>
   <nav class="navbar navbar-default">
     <ul class="nav navbar-nav">
+      <div class="spot-logo">
+        <%= link_to "Listen to Spotify Online!", "https://play.spotify.com/browse" if current_user %>
+        <li>
+          <%= image_tag "Spotify_Icon_RGB_Green.png" %>
+        </li>
+      </div>
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "Log In", "/auth/spotify" unless current_user %></li>
       <li><%= link_to "Log Out", logout_path, method: :delete if current_user%></li>
