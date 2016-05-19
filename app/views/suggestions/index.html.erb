@@ -1,5 +1,7 @@
-<h2>
-  Here's a list of suggestions!
-</h2>
+<% if current_user %> 
+  <h2>
+    Here's a list of suggestions!
+  </h2>
 
-<%= render partial: "suggestion" %>
+  <%= render partial: "suggestion" %>
+<% end %> 

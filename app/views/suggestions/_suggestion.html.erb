@@ -1,9 +1,6 @@
 <h3>
   Music
 </h3>
-<h3>
-  Food
-</h3>
 <% @music_suggestions.each do |suggestion| %>
   <li>
     <%= suggestion.name %>
@@ -12,6 +9,9 @@
   </li>
 <% end %>
 
+<h3>
+  Food
+</h3>
 <% @food_suggestions.each do |suggestion| %>
   <li>
     <%= suggestion.name %>
