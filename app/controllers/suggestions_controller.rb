@@ -10,17 +10,13 @@ class SuggestionsController < ApplicationController
   end 
 
   def create
-    @tunes_takeout = TunesTakeoutWrapper.search(params["query"])
-    @suggestions = @tunes_takeout.suggestions
-    @music_suggestions = Music.suggested_music(@suggestions)
-    @food_suggestions = Food.suggested_food(@suggestions)
+    @tunes_takeout      = TunesTakeoutWrapper.search(params["query"]) 
+    @suggestions        = @tunes_takeout.suggestions
+    
+    @music_suggestions  = Music.suggested_music(@suggestions)
+    @food_suggestions   = Food.suggested_food(@suggestions)
+    
     render :index 
-  end 
-
-
-  def show
-    # individual restaurants / music 
-    # don't forget a route
   end 
 
   def favorite

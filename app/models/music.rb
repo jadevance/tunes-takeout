@@ -6,12 +6,14 @@ class Music < ActiveRecord::Base
     @name     = spotify_object.name
     @link     = spotify_object.external_urls["spotify"]
     @type     = spotify_object.type
-    # track
-    # @image    = spotify_object.images[0]["url"]
-    # album
-    # @image    = spotify_object.album.images[0]["url"]
-    # artist 
-    # @image    = spotify_object.artist.images[0]["url"]   
+    @embed    = spotify_object.uri 
+    unless @type == "track" || spotify_object.images.empty?
+      @image    = check_for_images(spotify_object.images)
+      @image = @image["url"]
+    else 
+      @image = nil
+    end 
+
   end
 
 
@@ -36,5 +38,15 @@ class Music < ActiveRecord::Base
     end 
       self.new(@music)
   end
+
+  def check_for_images(image_array)
+    image_array.find {|image| image["height"] == 64 }
+  end 
 end
 
+# artist 
+# @image    = spotify_object.artist.images[0]["url"]   
+# album
+# @image    = spotify_object.album.images[0]["url"]
+# track
+# @image    = spotify_object.images[0]["url"]

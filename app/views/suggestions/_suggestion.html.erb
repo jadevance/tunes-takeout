@@ -1,10 +1,10 @@
 <h3>
-  Music
+  Music 
 </h3>
 <% @music_suggestions.each do |suggestion| %>
   <li>
-    <%= suggestion.name %>
-    <%= suggestion.link %>
+    <%= link_to(suggestion.name, "#{suggestion.link}") %>
+    <%= image_tag("#{suggestion.image}")%>
     <%= suggestion.type %>
   </li>
 <% end %>
@@ -14,17 +14,17 @@
 </h3>
 <% @food_suggestions.each do |suggestion| %>
   <li>
-    <%= suggestion.name %>
-    <%= suggestion.image %>
-    <%= suggestion.link %>
+    <%= link_to(suggestion.name, "#{suggestion.link}") %>
+    <%= image_tag("#{suggestion.image}") %>
     <%= suggestion.rating[:stars] %>
+    <%= image_tag("#{suggestion.rating[:stars_image]}") %>
   </li>
 <% end %>
 <!-- 
 
 For Music: 
-  => name of the music item, linking to appropriate Spotify page
-  => type of the music item (artist, album, track, or playlist)
+  Done => name of the music item, linking to appropriate Spotify page
+  Done => type of the music item (artist, album, track, or playlist)
   => photo/album cover of the music item
   => optional: embedded Spotify player
 
