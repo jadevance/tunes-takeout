@@ -1,18 +1,16 @@
 require 'httparty'
 
-module TunesTakeoutWrapper
-    BASE_URL = "https://tunes-takeout-api.herokuapp.com/v1/"
+class TunesTakeoutWrapper
+  BASE_URL = "https://tunes-takeout-api.herokuapp.com/"
+  attr_reader :suggestions, :href
 
   def initialize(data)
-    @id = data["id"]
-    @food_id = data["food_id"]
-    @music_id = data["music_id"]
-    @music_type = data["music_type"]
-  end 
+    @href        = data["href"]
+    @suggestions = data["suggestions"]
+  end
 
-  # limit, seed as params?
-  def self.find(suggestion)
-    data = HTTParty.get(BASE_URL + "suggestions/search?#{suggestion}").parsed_response
+  def self.search(query, limit=10, seed=nil)
+    data = HTTParty.get(BASE_URL + "/v1/suggestions/search?query=#{query}").parsed_response
     self.new(data)
   end
 end 
