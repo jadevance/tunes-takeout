@@ -1,0 +1,8 @@
+<h1>Welcome to Tunes and Takeout!</h1>
+<% if current_user %>
+  <%= form_tag :suggestions, {controller: 'suggestions', action: 'create'} do |f| %>
+    <%= label_tag :query %>
+    <%= text_field_tag :query %>
+    <%= submit_tag("Search") %>
+  <% end %>
+<% end %> 

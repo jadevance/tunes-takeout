@@ -1,0 +1,37 @@
+<h3>
+  Music
+</h3>
+<h3>
+  Food
+</h3>
+<% @music_suggestions.each do |suggestion| %>
+  <li>
+    <%= suggestion.name %>
+    <%= suggestion.link %>
+    <%= suggestion.type %>
+  </li>
+<% end %>
+
+<% @food_suggestions.each do |suggestion| %>
+  <li>
+    <%= suggestion.name %>
+    <%= suggestion.image %>
+    <%= suggestion.link %>
+    <%= suggestion.rating[:stars] %>
+  </li>
+<% end %>
+<!-- 
+
+For Music: 
+  => name of the music item, linking to appropriate Spotify page
+  => type of the music item (artist, album, track, or playlist)
+  => photo/album cover of the music item
+  => optional: embedded Spotify player
+
+For Food: 
+  => name of the business, linking to appropriate Yelp page
+  => photo/logo of the business
+  => optional: phone number of the business
+  => optional: address of the business 
+
+-->
