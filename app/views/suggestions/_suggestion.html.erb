@@ -1,53 +1,35 @@
 <div class="container">
-  <h3>Music</h3>
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Name</th>
+        <th>Artist</th>
         <th>Type</th>
-        <th>Cover Art</th>
-        <th>Favorite This!</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @music_suggestions.each do |suggestion| %>
-      <tr>
-        <td><%= link_to(suggestion.name, "#{suggestion.link}") %></td>
-        <td><%= suggestion.type %></td>
-        <td><%= image_tag("#{suggestion.image}")%></td>
-        <td>Favorite placeholder</td>
-      </tr>
-    <% end %>
-    </tbody>         
-  </table>
-</div>
-
-<div class="container">
-  <h3>Food</h3>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Restaurant Name</th>
-        <th>Rating</th>
+        <th>Album Art</th>
+        <th>Restaurant</th>
         <th>Delicious Imagery</th>
+        <th>Rating</th>
         <th>Favorite This! </th>
       </tr>
     </thead>
     <tbody>
-    <% @food_suggestions.each do |suggestion| %>
+    <% @pairing_suggestions.each do |music, food| %>
       <tr>
-        <td><%= link_to(suggestion.name, "#{suggestion.link}") %></td>
+        <td><%= link_to(music.name, "#{music.link}") %></td>
+        <td><%= music.type %></td>
+        <td><%= image_tag("#{music.image}")%></td>
+        <td><%= link_to(food.name, "#{food.link}") %></td>
+        <td><%= image_tag("#{food.image}")%></td>
         <td>
-          <%= suggestion.rating[:stars] %>
-          <%= image_tag("#{suggestion.rating[:stars_image]}") %>
+          <%= food.rating[:stars] %>
+          <%= image_tag("#{food.rating[:stars_image]}") %>
         </td>
-        <td><%= image_tag("#{suggestion.image}")%></td>
         <td>Favorite placeholder</td>
       </tr>
     <% end %>
     </tbody>        
   </table>
 </div>
+
 <!-- 
 
 For Music: 
