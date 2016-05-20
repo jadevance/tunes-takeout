@@ -16,14 +16,19 @@
       <tr>
         <td><%= link_to(music.name, "#{music.link}") %></td>
         <td><%= music.type %></td>
-        <td><%= image_tag("#{music.image}")%></td>
+        <td><%= image_tag("#{music.image}", :class => 'album-art')%></td>
         <td><%= link_to(food.name, "#{food.link}") %></td>
         <td><%= image_tag("#{food.image}")%></td>
         <td>
           <%= food.rating[:stars] %>
           <%= image_tag("#{food.rating[:stars_image]}") %>
         </td>
-        <td>Favorite placeholder</td>
+        <td>
+          <span class="fa-stack fa-2x">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-heart fa-stack-1x fa-inverse"></i>
+          </span>
+        </td>
       </tr>
     <% end %>
     </tbody>        
