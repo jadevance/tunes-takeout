@@ -1,36 +1,64 @@
-<h3>
-  Music 
-</h3>
-<% @music_suggestions.each do |suggestion| %>
-  <li>
-    <%= link_to(suggestion.name, "#{suggestion.link}") %>
-    <%= image_tag("#{suggestion.image}")%>
-    <%= suggestion.type %>
-  </li>
-<% end %>
+<div class="container">
+  <h3>Music</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Cover Art</th>
+        <th>Favorite This!</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @music_suggestions.each do |suggestion| %>
+      <tr>
+        <td><%= link_to(suggestion.name, "#{suggestion.link}") %></td>
+        <td><%= suggestion.type %></td>
+        <td><%= image_tag("#{suggestion.image}")%></td>
+        <td>Favorite placeholder</td>
+      </tr>
+    <% end %>
+    </tbody>         
+  </table>
+</div>
 
-<h3>
-  Food
-</h3>
-<% @food_suggestions.each do |suggestion| %>
-  <li>
-    <%= link_to(suggestion.name, "#{suggestion.link}") %>
-    <%= image_tag("#{suggestion.image}") %>
-    <%= suggestion.rating[:stars] %>
-    <%= image_tag("#{suggestion.rating[:stars_image]}") %>
-  </li>
-<% end %>
+<div class="container">
+  <h3>Food</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Restaurant Name</th>
+        <th>Rating</th>
+        <th>Delicious Imagery</th>
+        <th>Favorite This! </th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @food_suggestions.each do |suggestion| %>
+      <tr>
+        <td><%= link_to(suggestion.name, "#{suggestion.link}") %></td>
+        <td>
+          <%= suggestion.rating[:stars] %>
+          <%= image_tag("#{suggestion.rating[:stars_image]}") %>
+        </td>
+        <td><%= image_tag("#{suggestion.image}")%></td>
+        <td>Favorite placeholder</td>
+      </tr>
+    <% end %>
+    </tbody>        
+  </table>
+</div>
 <!-- 
 
 For Music: 
   Done => name of the music item, linking to appropriate Spotify page
   Done => type of the music item (artist, album, track, or playlist)
-  => photo/album cover of the music item
+  Done => photo/album cover of the music item
   => optional: embedded Spotify player
 
 For Food: 
-  => name of the business, linking to appropriate Yelp page
-  => photo/logo of the business
+  Done => name of the business, linking to appropriate Yelp page
+  Done => photo/logo of the business
   => optional: phone number of the business
   => optional: address of the business 
 
