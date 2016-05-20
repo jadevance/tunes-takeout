@@ -40,7 +40,7 @@ class Music < ActiveRecord::Base
   end
 
   def check_for_images(image_array)
-    image_array.find {|image| image["height"] == 64 }
+    image_array.find {|image| image["url"] != nil }
   end 
 end
 

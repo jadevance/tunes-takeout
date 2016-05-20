@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get    '/suggestions'             =>  'suggestions#index'
   post   '/suggestions'             =>  'suggestions#create'
   get    '/favorites'               =>  'suggestions#favorites', as: :favorites
+  get    '/:uid/favorites'          =>  'users#favorites', as: :my_favorites
   post   '/favorite'                =>  'suggestions#favorite'
   post   '/unfavorite'              =>  'suggestions#unfavorite'
 end

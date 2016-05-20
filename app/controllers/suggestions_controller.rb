@@ -30,19 +30,23 @@ class SuggestionsController < ApplicationController
   def favorites
     # get the favorites
     @tunes_takeout   = TunesTakeoutWrapper.top_favorites 
-    # array of tunes takeout ids
     @top_favorites =  @tunes_takeout.suggestions
     
     @list = []
+    
     #look up each favorite 
     @top_favorites.each do |id|
-      # return a hash with each id, food_id and music_id
       @list << TunesTakeoutWrapper.each_favorite(id)  
     end  
-      @music_suggestions  = Music.suggested_music(@list)
-      @food_suggestions   = Food.suggested_food(@list)
-      @pairing_suggestions = @music_suggestions.zip(@food_suggestions) 
+
+    @music_suggestions  = Music.suggested_music(@list)
+    @food_suggestions   = Food.suggested_food(@list)
+    @pairing_suggestions = @music_suggestions.zip(@food_suggestions) 
   end
+
+  def favorite 
+
+  end 
 
   def unfavorite
   end 
