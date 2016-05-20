@@ -12,6 +12,7 @@
 <main class="container">
   <%= "Hi #{ current_user.display_name }!" if current_user %>
   <%= image_tag current_user.photo_url if current_user %>
+  <%= "User ID #{ current_user.uid }!" if current_user %>
   <div class="spot-logo">
     <%= link_to "Listen to Spotify Online!", "https://play.spotify.com/browse" if current_user %>
     <%= image_tag "Spotify_Icon_RGB_Green.png" %>

@@ -2,13 +2,13 @@ class Music < ActiveRecord::Base
   attr_reader :id, :name, :type, :link, :image
 
   def initialize(spotify_object)
-    @id       = spotify_object.id
-    @name     = spotify_object.name
-    @link     = spotify_object.external_urls["spotify"]
-    @type     = spotify_object.type
-    @embed    = spotify_object.uri 
+    @id      = spotify_object.id
+    @name    = spotify_object.name
+    @link    = spotify_object.external_urls["spotify"]
+    @type    = spotify_object.type
+    @embed   = spotify_object.uri 
     unless @type == "track" || spotify_object.images.empty?
-      @image    = check_for_images(spotify_object.images)
+      @image = check_for_images(spotify_object.images)
       @image = @image["url"]
     else 
       @image = nil
@@ -28,13 +28,13 @@ class Music < ActiveRecord::Base
   def self.search(music_id, music_type)
     case music_type
     when "artist"
-      @music     = RSpotify::Artist.find(music_id)
+      @music = RSpotify::Artist.find(music_id)
     when "album"
-      @music     = RSpotify::Album.find(music_id)
+      @music = RSpotify::Album.find(music_id)
     when "track"
-      @music     = RSpotify::Track.find(music_id)
+      @music = RSpotify::Track.find(music_id)
     else
-      @music     = nil
+      @music = nil
     end 
       self.new(@music)
   end

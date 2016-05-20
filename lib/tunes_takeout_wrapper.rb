@@ -13,4 +13,14 @@ class TunesTakeoutWrapper
     data = HTTParty.get(BASE_URL + "/v1/suggestions/search?query=#{query}").parsed_response
     self.new(data)
   end
+
+  def self.top_favorites(limit=10)
+    data = HTTParty.get(BASE_URL + "/v1/suggestions/top?limit=#{limit}").parsed_response
+    self.new(data)
+  end 
+
+  def self.each_favorite(id)
+    data = HTTParty.get(BASE_URL + "/v1/suggestions/#{id}").parsed_response
+    @suggestion  = data["suggestion"]
+  end 
 end 
