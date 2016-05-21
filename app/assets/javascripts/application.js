@@ -13,3 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(function() {
+    $('a').click(function() {
+        $(this).find('i').toggleClass('fa fa-heart-o fa fa-heart');
+    });
+});

@@ -11,9 +11,13 @@
   width: 100px;
   height: 100px;
  }
+ 
 
+.fa {
+  font-size: 2rem !important;
+  color: red;
+}
 
 .fa-heart:hover {
-  color: red;
   cursor: pointer;
  }
