@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     user_id = current_user.uid
     # response from Charles' API 
     response = TunesTakeoutWrapper.favorite(user_id, suggestion_id)
-    render :favorites
+    redirect_to my_favorites_path
   end
 
   def unfavorite
@@ -34,6 +34,6 @@ class UsersController < ApplicationController
     user_id = current_user.uid
     # response from Charles' API 
     response = TunesTakeoutWrapper.favorite(user_id, suggestion_id)
-    render :favorites
+    redirect_to my_favorites_path
   end
 end 

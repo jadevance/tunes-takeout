@@ -1,6 +1,33 @@
-<% if current_user %> 
-  <h2>
-    My Favorites!
-  </h2>
-  <%= render partial: "/suggestions/suggestion" %>
-<% end %> 
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Artist</th>
+        <th>Type</th>
+        <th>Album Art</th>
+        <th>Restaurant</th>
+        <th>Delicious Imagery</th>
+        <th>Rating</th>
+        <th>Favorited</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @pairing_suggestions.each do |music, food, id| %>
+      <tr>
+        <td><%= link_to(music.name, "#{music.link}") %></td>
+        <td><%= music.type %></td>
+        <td><%= image_tag("#{music.image}", :class => 'album-art')%></td>
+        <td><%= link_to(food.name, "#{food.link}") %></td>
+        <td><%= image_tag("#{food.image}")%></td>
+        <td>
+          <%= food.rating[:stars] %>
+          <%= image_tag("#{food.rating[:stars_image]}") %>
+        </td>
+        <td>
+          <i class="fa fa-heart"></i>
+        </td>
+      </tr>
+    <% end %> 
+    </tbody>        
+  </table>
+</div>

@@ -26,14 +26,14 @@
         <td>
           <% if current_user %>
             <% if user_favorited?(id) %> 
-              <%= form_tag favorite_path(current_user.uid, id), controller: "users", method: "delete" do %>
+              <%= form_tag my_favorites_path(current_user.uid), controller: "users", method: "delete" do %>
                 <%= hidden_field id, "id", {value: id} %>
                 <%= button_tag(type: 'submit', class: "btn btn-link") do %>
                  <i class="fa fa-heart"></i>
                 <% end %>
               <% end %>
             <% else %>
-              <%= form_tag favorite_path(current_user.uid, id), controller: "users", method: "post" do %>
+              <%= form_tag my_favorites_path(current_user.uid), controller: "users", method: "post" do %>
                 <%= hidden_field id, "id", {value: id} %>
                 <%= button_tag(type: 'submit', class: "btn btn-link") do %>
                  <i class="fa fa-heart-o"></i>
@@ -47,19 +47,3 @@
     </tbody>        
   </table>
 </div>
-
-<!-- 
-
-For Music: 
-  Done => name of the music item, linking to appropriate Spotify page
-  Done => type of the music item (artist, album, track, or playlist)
-  Done => photo/album cover of the music item
-  => optional: embedded Spotify player
-
-For Food: 
-  Done => name of the business, linking to appropriate Yelp page
-  Done => photo/logo of the business
-  => optional: phone number of the business
-  => optional: address of the business 
-
--->

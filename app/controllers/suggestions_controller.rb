@@ -30,7 +30,7 @@ class SuggestionsController < ApplicationController
     render :index 
   end 
   
-
+  # top ten suggestions. Faster load than twenty 
   def favorites
     # get the favorites
     @tunes_takeout   = TunesTakeoutWrapper.top_favorites 
@@ -42,7 +42,6 @@ class SuggestionsController < ApplicationController
     @top_favorites.each do |id|
       @list << TunesTakeoutWrapper.each_favorite(id)  
     end  
-
     @music_suggestions  = Music.suggested_music(@list)
     @food_suggestions   = Food.suggested_food(@list)
     @pairing_suggestions = []
