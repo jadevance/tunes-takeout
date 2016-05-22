@@ -1,5 +1,5 @@
 class Music < ActiveRecord::Base
-  attr_reader :id, :name, :type, :link, :image
+  attr_reader :id, :name, :type, :link, :image, :embed 
 
   def initialize(spotify_object)
     @id      = spotify_object.id
@@ -13,9 +13,7 @@ class Music < ActiveRecord::Base
     else 
       @image = nil
     end 
-
   end
-
 
   def self.suggested_music(tunes_takeout_suggestion)
     tunes_takeout_suggestion.collect { |suggestion| 
@@ -23,7 +21,6 @@ class Music < ActiveRecord::Base
       suggestion["music_type"])
     }
   end
-
 
   def self.search(music_id, music_type)
     case music_type
