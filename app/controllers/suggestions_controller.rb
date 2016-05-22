@@ -3,7 +3,7 @@ class SuggestionsController < ApplicationController
 
   def index    
     if @suggestions.nil?
-      redirect_to root_path, notice: "No matches for #{params["query"]}!"
+      redirect_to root_path, notice: "Sorry, nothing was found for #{params["query"]}!"
     else
       render :index
     end
@@ -21,11 +21,15 @@ class SuggestionsController < ApplicationController
 
     @music_suggestions  = Music.suggested_music(@suggestions)
     @food_suggestions   = Food.suggested_food(@suggestions)
-    
-    # lol I heart doing janky zip stuff
-    @pairing_suggestions = @music_suggestions.zip(@food_suggestions) 
+
+   
+    @pairing_suggestions = []
+    @ids.length.times do |index|
+      @pairing_suggestions << [@music_suggestions[index], @food_suggestions[index], @ids[index]]
+    end 
     render :index 
   end 
+  
 
   def favorites
     # get the favorites
@@ -43,15 +47,8 @@ class SuggestionsController < ApplicationController
     @food_suggestions   = Food.suggested_food(@list)
     @pairing_suggestions = @music_suggestions.zip(@food_suggestions) 
   end
-
-  def favorite 
-
-  end 
-
-  def unfavorite
-  end 
-
 end
 
-# favorites right now goes to a top ten list
-# need to think about favorites by user 
+
+# Opportunity to dry up code between create and favorites methods
+
