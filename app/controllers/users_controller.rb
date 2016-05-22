@@ -24,16 +24,18 @@ class UsersController < ApplicationController
     user_id = current_user.uid
     # response from Charles' API 
     response = TunesTakeoutWrapper.favorite(user_id, suggestion_id)
+    # needs error handling if response is bad
     redirect_to my_favorites_path
   end
 
   def unfavorite
     # pulling the id out of the params hash
     id = params.values.to_a
-    suggestion_id = id[2]["id"]
+    suggestion_id = id[3]["id"]
     user_id = current_user.uid
     # response from Charles' API 
-    response = TunesTakeoutWrapper.favorite(user_id, suggestion_id)
+    response = TunesTakeoutWrapper.unfavorite(user_id, suggestion_id)
+    # needs error handling if response is bad
     redirect_to my_favorites_path
   end
 end 
