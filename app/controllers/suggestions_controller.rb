@@ -36,8 +36,8 @@ class SuggestionsController < ApplicationController
     @tunes_takeout   = TunesTakeoutWrapper.top_favorites 
     @top_favorites =  @tunes_takeout.suggestions
     
+
     @list = []
-    
     #look up each favorite 
     @top_favorites.each do |id|
       @list << TunesTakeoutWrapper.each_favorite(id)  
@@ -45,7 +45,10 @@ class SuggestionsController < ApplicationController
 
     @music_suggestions  = Music.suggested_music(@list)
     @food_suggestions   = Food.suggested_food(@list)
-    @pairing_suggestions = @music_suggestions.zip(@food_suggestions) 
+    @pairing_suggestions = []
+    @list.length.times do |index|
+      @pairing_suggestions << [@music_suggestions[index], @food_suggestions[index], @top_favorites[index]]
+    end
   end
 end
 
