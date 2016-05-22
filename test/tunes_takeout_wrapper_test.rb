@@ -14,9 +14,7 @@ class TunesTakeoutWrapperTest < ActiveSupport::TestCase
         @top_favorites         = TunesTakeoutWrapper.top_favorites
         @single_favorite       = TunesTakeoutWrapper.each_favorite("Vz0KO4-RRwADbn9f")
         @favorite_id_array     = TunesTakeoutWrapper.get_favorites("jadieladie")
-
       end
-
 
       it "returns twenty pairing suggestions", :vcr do
         choices = @avocado.suggestions.count
@@ -43,7 +41,6 @@ class TunesTakeoutWrapperTest < ActiveSupport::TestCase
         @original_count = @favorite_id_array.count
         TunesTakeoutWrapper.favorite('jadieladie', "Vz92VPLW7wADpNDB")
         @new_count = TunesTakeoutWrapper.get_favorites("jadieladie").count
-
         assert_equal (@original_count), @new_count
       end
 
@@ -54,7 +51,6 @@ class TunesTakeoutWrapperTest < ActiveSupport::TestCase
         @new_count = TunesTakeoutWrapper.get_favorites("jadieladie").count
         assert_equal (@original_count), @new_count
       end
-
     end
   end
 end
