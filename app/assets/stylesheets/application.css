@@ -1,8 +1,12 @@
 
 /* ALL PAGES */
-.spot-logo img {
+
+.spotify-banner {
+  text-align: right; 
+}
+.spotify-banner img {
   
-  width: 40px;
+  width: 75px;
  
  }
 
