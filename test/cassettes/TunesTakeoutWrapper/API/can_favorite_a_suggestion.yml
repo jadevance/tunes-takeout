@@ -1,0 +1,285 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://tunes-takeout-api.herokuapp.com/v1/suggestions/search?query=avocado
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 23 May 2016 00:55:55 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '2514'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJocmVmIjoiaHR0cHM6Ly90dW5lcy10YWtlb3V0LWFwaS5oZXJva3VhcHAu
+        Y29tL3YxL3N1Z2dlc3Rpb25zL3NlYXJjaD9xdWVyeT1hdm9jYWRvXHUwMDI2
+        bGltaXQ9MjBcdTAwMjZzZWVkPWF2b2NhZG8iLCJzdWdnZXN0aW9ucyI6W3si
+        aWQiOiJWMElaRWxFbEp3QUR6R00wIiwiZm9vZF9pZCI6ImhvbWVncm93bi1z
+        ZWF0dGxlLTMiLCJtdXNpY19pZCI6IjNRcGgxRFB6RU9zamVDMW1DQ24zSzgi
+        LCJtdXNpY190eXBlIjoiYWxidW0ifSx7ImlkIjoiVjBJWkVsRWxKd0FEekdN
+        MSIsImZvb2RfaWQiOiJlbC1jYW1pw7NuLXNlYXR0bGUtNiIsIm11c2ljX2lk
+        IjoiNDQxUTdtYjJRYmdZTklDNDVoOTdOciIsIm11c2ljX3R5cGUiOiJ0cmFj
+        ayJ9LHsiaWQiOiJWMElaRWxFbEp3QUR6R00yIiwiZm9vZF9pZCI6InBsdW0t
+        dmVnYW4tYmlzdHJvLXNlYXR0bGUiLCJtdXNpY19pZCI6IjFiWkFKMnpPRERQ
+        ZmFaVnRZMTMwV0ciLCJtdXNpY190eXBlIjoidHJhY2sifSx7ImlkIjoiVjBJ
+        WkVsRWxKd0FEekdNMyIsImZvb2RfaWQiOiJtb21pamktc2VhdHRsZSIsIm11
+        c2ljX2lkIjoiMXl1Vkd5bk5OcGJwek16V0M3WFNkZCIsIm11c2ljX3R5cGUi
+        OiJhbGJ1bSJ9LHsiaWQiOiJWMElaRWxFbEp3QUR6R000IiwiZm9vZF9pZCI6
+        Im5vLWJvbmVzLWJlYWNoLWNsdWItc2VhdHRsZS0yIiwibXVzaWNfaWQiOiIz
+        SEdVWXNSWDVkSGxVeE1EY2dyOUlKIiwibXVzaWNfdHlwZSI6InRyYWNrIn0s
+        eyJpZCI6IlZ6ODNDdkxXN3dBRHBNQ2EiLCJmb29kX2lkIjoiZ3JlYXQtbnct
+        c291cC1zZWF0dGxlIiwibXVzaWNfaWQiOiI0RU5wMXdldVpLVGlNaXJTU3pL
+        WkFzIiwibXVzaWNfdHlwZSI6ImFsYnVtIn0seyJpZCI6IlYwSVpFbEVsSndB
+        RHpHTTUiLCJmb29kX2lkIjoiYmVhY29uLWF2ZS1zYW5kd2ljaGVzLXNlYXR0
+        bGUiLCJtdXNpY19pZCI6IjEzd01mN21rdHVXY3Zxb1c1VFl3bXIiLCJtdXNp
+        Y190eXBlIjoiYWxidW0ifSx7ImlkIjoiVjBJWkVsRWxKd0FEekdNNiIsImZv
+        b2RfaWQiOiJvZGRmZWxsb3dzLWNhZmUtYW5kLWJhci1zZWF0dGxlIiwibXVz
+        aWNfaWQiOiIxYllxQ2p5b1g0NTZZT3NDNU1oaU5DIiwibXVzaWNfdHlwZSI6
+        InRyYWNrIn0seyJpZCI6IlYwSVpFbEVsSndBRHpHTTciLCJmb29kX2lkIjoi
+        Y2FmZS15dW1tLXNlYXR0bGUtMiIsIm11c2ljX2lkIjoiMG82ZzJDZFpPdjlw
+        ZzZybjdWdkJxQyIsIm11c2ljX3R5cGUiOiJhbGJ1bSJ9LHsiaWQiOiJWMEla
+        RWxFbEp3QUR6R004IiwiZm9vZF9pZCI6InNlYXR0bGUtc2FsYWRzLXNlYXR0
+        bGUiLCJtdXNpY19pZCI6IjNIb2lCdXA3QzU1cmxJUnVZQzlObnQiLCJtdXNp
+        Y190eXBlIjoidHJhY2sifSx7ImlkIjoiVnowVWRRak5xQUFEQmJfQiIsImZv
+        b2RfaWQiOiJzZcOxb3ItbW9vc2UtY2Fmw6ktc2VhdHRsZS0yIiwibXVzaWNf
+        aWQiOiIwbjVUcGlWN3NsWjc0eElKTVRNZFI4IiwibXVzaWNfdHlwZSI6InRy
+        YWNrIn0seyJpZCI6IlYwSVpFbEVsSndBRHpHTTkiLCJmb29kX2lkIjoic2hp
+        a3Utc3VzaGktc2VhdHRsZSIsIm11c2ljX2lkIjoiMWtUNGxLUlV3VGJsQlVV
+        b1h0ZjB0ZCIsIm11c2ljX3R5cGUiOiJ0cmFjayJ9LHsiaWQiOiJWejAtZGdq
+        TnFBQURCYzAxIiwiZm9vZF9pZCI6ImFtZXJpY2FuYS1zZWF0dGxlIiwibXVz
+        aWNfaWQiOiIxMXBhUmp6cFR0eWd0REwwM2JTQjUwIiwibXVzaWNfdHlwZSI6
+        ImFsYnVtIn0seyJpZCI6IlYwSVpFbEVsSndBRHpHTS0iLCJmb29kX2lkIjoi
+        Z2xvcy1zZWF0dGxlIiwibXVzaWNfaWQiOiIyc2duSXdaUU5YaTlOTnc4blBs
+        MU5aIiwibXVzaWNfdHlwZSI6InRyYWNrIn0seyJpZCI6IlYwSVpFbEVsSndB
+        RHpHTV8iLCJmb29kX2lkIjoic3VzaGktbWFraS1zZWF0dGxlIiwibXVzaWNf
+        aWQiOiIxcjBDREl1Z0NmeEppZThkVmpFSU9VIiwibXVzaWNfdHlwZSI6ImFs
+        YnVtIn0seyJpZCI6IlYwSVpFbEVsSndBRHpHTkEiLCJmb29kX2lkIjoibWFu
+        ZWtpLXNlYXR0bGUiLCJtdXNpY19pZCI6IjJnZWJUU3llVVkwMDlaajFuODNl
+        WW8iLCJtdXNpY190eXBlIjoidHJhY2sifSx7ImlkIjoiVjBJWkVsRWxKd0FE
+        ekdOQiIsImZvb2RfaWQiOiJob21lZ3Jvd24tc2VhdHRsZS01IiwibXVzaWNf
+        aWQiOiIzSTM3QWRLRmlWS0xtcUtjZ2lXQ1REIiwibXVzaWNfdHlwZSI6InRy
+        YWNrIn0seyJpZCI6IlYwSVpFbEVsSndBRHpHTkMiLCJmb29kX2lkIjoibmlq
+        by1zdXNoaS1iYXItYW5kLWdyaWxsLXNlYXR0bGUiLCJtdXNpY19pZCI6IjFZ
+        MnBaTTVJakp0aEZ2TDVGVkRBMG4iLCJtdXNpY190eXBlIjoiYXJ0aXN0In0s
+        eyJpZCI6IlYwSVpFbEVsSndBRHpHTkQiLCJmb29kX2lkIjoiaS1sb3ZlLXN1
+        c2hpLW9uLWxha2UtdW5pb24tc2VhdHRsZS0yIiwibXVzaWNfaWQiOiIwUUFH
+        QkRWakxpNE1uazJNR3lQUUZVIiwibXVzaWNfdHlwZSI6InRyYWNrIn0seyJp
+        ZCI6IlYwSVpFbEVsSndBRHpHTkUiLCJmb29kX2lkIjoiY2hhY28tY2FueW9u
+        LW9yZ2FuaWMtY2FmZS1zZWF0dGxlLTIiLCJtdXNpY19pZCI6IjJadjdRUldG
+        bmJRa3RxbDY4WkxZMGUiLCJtdXNpY190eXBlIjoiYWxidW0ifV19
+    http_version: 
+  recorded_at: Mon, 23 May 2016 00:55:55 GMT
+- request:
+    method: get
+    uri: https://tunes-takeout-api.herokuapp.com/v1/suggestions/top?limit=10
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 23 May 2016 00:55:55 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '284'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"href":"https://tunes-takeout-api.herokuapp.com/v1/suggestions/top?limit=10","suggestions":["Vz0KQY-RRwADboE-","Vz0KO4-RRwADbn9t","Vz0KQY-RRwADboEQ","Vz0KNY-RRwADbn29","Vz0KO4-RRwADbn9f","Vz0KO4-RRwADbn9c","Vz0KQY-RRwADboFP","Vz0KO4-RRwADbn9Q","Vz0KO4-RRwADbn9d","Vz0KQY-RRwADboEq"]}'
+    http_version: 
+  recorded_at: Mon, 23 May 2016 00:55:56 GMT
+- request:
+    method: get
+    uri: https://tunes-takeout-api.herokuapp.com/v1/suggestions/Vz0KO4-RRwADbn9f
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 23 May 2016 00:55:56 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '219'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"href":"https://tunes-takeout-api.herokuapp.com/v1/suggestions/Vz0KO4-RRwADbn9f","suggestion":{"id":"Vz0KO4-RRwADbn9f","food_id":"cactus-restaurants-seattle-2","music_id":"20OmjCaPoZZg3hQ9iOKmrq","music_type":"album"}}'
+    http_version: 
+  recorded_at: Mon, 23 May 2016 00:55:56 GMT
+- request:
+    method: get
+    uri: https://tunes-takeout-api.herokuapp.com/v1/users/jadieladie/favorites
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 23 May 2016 00:55:56 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '286'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"href":"https://tunes-takeout-api.herokuapp.com/v1/users/jadieladie/favorites","suggestions":["Vz0KQY-RRwADboEQ","Vz83CvLW7wADpMCa","V0IZElElJwADzGM0","Vz0KO4-RRwADbn9f","Vz0KO4-RRwADbn9t","Vz0KQY-RRwADboFP","V0IZElElJwADzGM_","V0DZcD2OhAADuST8","V0Ij-1ElJwADzGZQ","Vz92VPLW7wADpNDB"]}'
+    http_version: 
+  recorded_at: Mon, 23 May 2016 00:55:57 GMT
+- request:
+    method: post
+    uri: https://tunes-takeout-api.herokuapp.com/v1/users/jadieladie/favorites
+    body:
+      encoding: UTF-8
+      string: '{"suggestion":"Vz92VPLW7wADpNDB"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 409
+      message: Conflict
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 23 May 2016 00:55:57 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/html;charset=utf-8
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Length:
+      - '0'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Mon, 23 May 2016 00:55:57 GMT
+- request:
+    method: get
+    uri: https://tunes-takeout-api.herokuapp.com/v1/users/jadieladie/favorites
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 23 May 2016 00:55:57 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '286'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"href":"https://tunes-takeout-api.herokuapp.com/v1/users/jadieladie/favorites","suggestions":["Vz0KQY-RRwADboEQ","Vz83CvLW7wADpMCa","V0IZElElJwADzGM0","Vz0KO4-RRwADbn9f","Vz0KO4-RRwADbn9t","Vz0KQY-RRwADboFP","V0IZElElJwADzGM_","V0DZcD2OhAADuST8","V0Ij-1ElJwADzGZQ","Vz92VPLW7wADpNDB"]}'
+    http_version: 
+  recorded_at: Mon, 23 May 2016 00:55:58 GMT
+recorded_with: VCR 3.0.3
