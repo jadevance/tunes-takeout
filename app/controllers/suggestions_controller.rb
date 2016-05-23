@@ -49,6 +49,10 @@ class SuggestionsController < ApplicationController
       @pairing_suggestions << [@music_suggestions[index], @food_suggestions[index], @top_favorites[index]]
     end
   end
+
+  private 
+
+  def 
 end
 
 

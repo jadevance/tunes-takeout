@@ -1,27 +1,31 @@
 class User < ActiveRecord::Base
-  validates :display_name, :uid, :provider, presence: true
+  validates :provider, presence: true
+  validates :uid, presence: true
+  validate :provider_must_be_spotify
 
-  def self.find_or_create_from_omniauth(auth_hash)
-    # Find a user
-    user = self.find_by(id: auth_hash["info"]["id"], provider: auth_hash["provider"])
-    
-    if !user.nil?
-      return user 
-    else
-    # create a user 
-     user               = User.new 
-     user.photo_url     = auth_hash["info"]['images'][0]['url']
-     user.uid           = auth_hash["info"]["id"]
-     user.display_name  = auth_hash["info"]["display_name"]
-     user.email         = auth_hash["info"]["email"]
-     user.provider      = auth_hash["provider"]
-
-      if user.save 
-        return user
-      else
-        return nil
-      end 
+  def provider_must_be_spotify
+    if provider != "spotify"
+      errors.add(:provider, "provider must be spotify")
     end
   end
 
+
+  def self.find_or_create_from_omniauth(auth_hash)
+    user = self.find_by(uid: auth_hash["info"]["id"], provider: auth_hash["provider"])
+    if !user.nil?
+      return user
+    else
+      user              = User.new
+      user.uid          = auth_hash["info"]['id']
+      user.provider     = auth_hash['provider']
+      user.display_name = auth_hash["info"]["display_name"]
+      user.photo_url    = auth_hash["info"]['images'][0]['url']
+
+      if user.save
+        return user
+      else
+        return nil
+      end
+    end
+  end
 end
