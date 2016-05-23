@@ -1,10 +1,7 @@
 class UsersController < ApplicationController
   def favorites
-    # get the favorites
     @tunes_takeout = TunesTakeoutWrapper.get_favorites(current_user.uid) 
-
     @list = []
-    #look up each favorite 
     @tunes_takeout.each do |id|
       @list << TunesTakeoutWrapper.each_favorite(id)  
     end  
@@ -18,24 +15,18 @@ class UsersController < ApplicationController
   end
 
   def favorite
-    # pulling the id out of the params hash
     id = params.values.to_a
     suggestion_id = id[2]["id"]
     user_id = current_user.uid
-    # response from Charles' API 
     response = TunesTakeoutWrapper.favorite(user_id, suggestion_id)
-    # needs error handling if response is bad
     redirect_to my_favorites_path
   end
 
   def unfavorite
-    # pulling the id out of the params hash
     id = params.values.to_a
     suggestion_id = id[3]["id"]
     user_id = current_user.uid
-    # response from Charles' API 
     response = TunesTakeoutWrapper.unfavorite(user_id, suggestion_id)
-    # needs error handling if response is bad
     redirect_to my_favorites_path
   end
 end 
